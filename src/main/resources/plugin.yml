@@ -1,0 +1,21 @@
+name: StaffvsPlayers
+version: '${project.version}'
+main: net.sootmc.staffvsplayers.StaffvsPlayers
+api-version: 1.19
+authors: [ JamieIsGeek ]
+description: A plugin for a SootMC Event that tracks staff deaths and announce only staff deaths
+website: play.sootmc.net
+
+commands:
+  staffdeaths:
+    permission: svp.getdeaths
+    description: Get the list of staff deaths and their killers!
+    usage: /<command>
+
+permissions:
+  svp.getdeaths:
+    description: Allows player to get the list of staff deaths and killers
+    default: op
+
+  svp.staff:
+    description: Defines a user as a staff member, logs their deaths!
