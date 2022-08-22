@@ -40,6 +40,10 @@ public final class StaffvsPlayers extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
         }
 
+        getCommand("add").setExecutor(new CommandHandler());
+        getCommand("getdeaths").setExecutor(new CommandHandler());
+
+        getServer().getPluginManager().registerEvents(new DeathListener(), instance);
 
         getLogger().info("Plugin has started!");
         getLogger().info("Made by Jamie!");
