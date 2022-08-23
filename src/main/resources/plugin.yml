@@ -7,9 +7,14 @@ description: A plugin for a SootMC Event that tracks staff deaths and announce o
 website: play.sootmc.net
 
 commands:
-  staffdeaths:
+  getdeaths:
     permission: svp.getdeaths
     description: Get the list of staff deaths and their killers!
+    usage: /<command>
+
+  add:
+    permission: svp.staff
+    description: Adds player to staff list
     usage: /<command>
 
 permissions:
