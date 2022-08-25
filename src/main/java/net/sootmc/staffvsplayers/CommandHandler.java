@@ -1,5 +1,6 @@
 package net.sootmc.staffvsplayers;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,9 +22,10 @@ public class CommandHandler implements CommandExecutor {
                     List<Pair<String, String>> results = StaffvsPlayers.database.getKillers();
 
                     String message = results.stream()
-                            .map(p -> String.format("%s killed %s", p.first(), p.second()))
+                            .map(p -> String.format(ChatColor.GREEN + "%s " + ChatColor.WHITE + "killed " + ChatColor.RED "%s", p.second(), p.first()))
                             .collect(Collectors.joining("\n"));
-
+                    
+                    player.sendMessage(ChatColor.RED + "-- Staff Deaths --");
                     player.sendMessage(message);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
@@ -32,6 +34,7 @@ public class CommandHandler implements CommandExecutor {
         } else if(command.getLabel().equals("add")) {
             if(sender instanceof Player player && player.hasPermission("svp.staff")) {
                 StaffvsPlayers.staff.add(player.getName());
+                player.sendMessage(ChatColor.GREEN + "Added to Staff List");
             }
         }
 
