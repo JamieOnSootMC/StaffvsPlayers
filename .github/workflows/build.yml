@@ -12,6 +12,10 @@ jobs:
           distribution: 'adopt'
       - name: Build
         run: mvn clean package
+      - uses: actions/upload-artifact@v1
+        with:
+          name: target
+          path: target
       - name: comment PR
         uses: machine-learning-apps/pr-comment@master
         env:
