@@ -31,6 +31,8 @@ public class DatabaseConnector {
             String username = StaffvsPlayers.staff.get(i);
             stmt.setString(i + 1, username);
         }
+        
+        stmt.execute();
 
         ResultSet result = stmt.getResultSet();
         List<Pair<String, String>> results = new ArrayList<>();
