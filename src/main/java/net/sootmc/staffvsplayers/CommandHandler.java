@@ -32,6 +32,7 @@ public class CommandHandler implements CommandExecutor {
         } else if(command.getLabel().equals("add")) {
             if(sender instanceof Player player && player.hasPermission("svp.staff")) {
                 StaffvsPlayers.staff.add(player.getName());
+                player.sendMessage(ChatColor.GREEN + "Added to Staff List");
             }
         }
 
