@@ -51,7 +51,7 @@ public class DatabaseConnector {
 
     public void setKiller(String killed, String killer) {
         try {
-            PreparedStatement stmt = this.connection.prepareStatement("REPLACE INTO StaffvsPlayers (killerName, staffName) VALUES (?, ?)");
+            PreparedStatement stmt = this.connection.prepareStatement("INSERT INTO StaffvsPlayers (killerName, staffName) VALUES (?, ?)");
 
             stmt.setString(1, killer);
             stmt.setString(2, killed);
