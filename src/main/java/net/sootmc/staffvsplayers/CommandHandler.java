@@ -22,7 +22,7 @@ public class CommandHandler implements CommandExecutor {
                     List<Pair<String, String>> results = StaffvsPlayers.database.getKillers();
 
                     String message = results.stream()
-                            .map(p -> String.format(ChatColor.GREEN + "%s " + ChatColor.WHITE + "killed " + ChatColor.RED "%s", p.second(), p.first()))
+                            .map(p -> String.format(ChatColor.GREEN + "%s " + ChatColor.WHITE + "killed " + ChatColor.RED + "%s", p.second(), p.first()))
                             .collect(Collectors.joining("\n"));
                     
                     player.sendMessage(ChatColor.RED + "-- Staff Deaths --");
