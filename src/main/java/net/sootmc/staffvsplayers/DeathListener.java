@@ -24,7 +24,7 @@ public class DeathListener implements Listener {
     @EventHandler
     public void onPlayerRespawn(PlayerRespawnEvent event) {
         Player player = event.getPlayer();
-        if(player.hasPermission("svp.staff")) {
+        if(!player.hasPermission("svp.staff")) {
             return;
         }
 
